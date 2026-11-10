@@ -18,7 +18,7 @@ try {
   assert.ok(packed.files.every(file => !file.path.includes('.skill-fit/') && !file.path.startsWith('node_modules/') && !file.path.startsWith('test/')),
     'Published archive must exclude sessions, dependencies, and local tests');
   const installed = path.join(temporary, 'consumer');
-  await exec(process.execPath, [npmCli, 'install', '--prefix', installed, path.join(temporary, packed.filename), '--ignore-scripts', '--offline', '--no-audit', '--no-fund']);
+  await exec(process.execPath, [npmCli, 'install', '--prefix', installed, path.join(temporary, packed.filename), '--ignore-scripts', '--no-audit', '--no-fund']);
   const packageRoot = path.join(installed, 'node_modules', '@ritesh17rb', 'skill-fit');
   const cli = path.join(packageRoot, 'dist', 'cli.js');
   await access(path.join(installed, 'node_modules', '.bin', process.platform === 'win32' ? 'skill-fit.cmd' : 'skill-fit'));
