@@ -1,0 +1,1 @@
+{ "tags": ["frontend", "react", "accessibility"], "profiles": ["feature"], "dependencies": { "react": ">=18 <20" } }

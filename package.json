@@ -1,0 +1,30 @@
+{
+  "name": "@ritesh17rb/skill-fit",
+  "version": "0.1.0",
+  "description": "Choose a small, explainable skill set for a coding task, prepare it for your agent, and record project verification.",
+  "type": "module",
+  "bin": { "skill-fit": "dist/cli.js" },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "files": ["dist", "examples/skills/**/SKILL.md", "examples/skills/**/skill-fit.json", "examples/skills/**/references/*.md", "examples/project/*.mjs", "examples/project/package.json", "examples/project/skill-fit.config.json", "README.md", "LICENSE", "CHANGELOG.md"],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "check": "npm run typecheck && npm test",
+    "smoke": "npm run build && node scripts/smoke.mjs",
+    "demo": "npm run build && node dist/cli.js plan --cwd examples/project --skills ../skills --task \"Fix duplicate webhook payments on retry\"",
+    "prepack": "npm run build"
+  },
+  "engines": { "node": ">=22" },
+  "license": "MIT",
+  "author": "Ritesh",
+  "repository": { "type": "git", "url": "git+https://github.com/Ritesh17rb/skill-fit.git" },
+  "homepage": "https://github.com/Ritesh17rb/skill-fit#readme",
+  "bugs": { "url": "https://github.com/Ritesh17rb/skill-fit/issues" },
+  "publishConfig": { "access": "public", "registry": "https://registry.npmjs.org/" },
+  "keywords": ["agent-skills", "coding-agents", "skills", "context-engineering", "verification", "cli"],
+  "dependencies": { "semver": "^7.7.0", "yaml": "^2.8.0" },
+  "devDependencies": { "@types/node": "^22.0.0", "@types/semver": "^7.7.0", "typescript": "^5.7.0" }
+}

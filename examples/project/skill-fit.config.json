@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "skillRoots": ["../skills"],
+  "maxSkills": 3,
+  "maxTokens": 8000,
+  "checks": [{ "name": "webhook tests", "command": "node", "args": ["--test", "webhook.test.mjs"], "timeoutMs": 10000 }]
+}

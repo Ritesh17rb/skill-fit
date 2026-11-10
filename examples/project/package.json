@@ -1,0 +1,6 @@
+{
+  "name": "skill-fit-demo-project",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node --test webhook.test.mjs" }
+}
